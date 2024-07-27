@@ -1,0 +1,62 @@
+/* === generic === */
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+/* === nav bar === */
+.nav {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 300px;
+background-color: #4A96D9;
+padding: 15px;
+box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+
+}
+
+.headshot-img {
+width: 80%;
+border: 5px solid #fff;
+}
+
+.nav ul {
+list-style-type: none;
+padding: 0;
+}
+
+.nav li {
+text-align: center;
+margin: 15px 0;
+color: #fff;
+font-size: 20px;
+font-weight: 500;
+opacity: 65%;
+}
+
+.nav li:hover {
+  opacity: 100%;
+}
+
+/* === content === */
+
+.content {
+flex: 1;
+padding: 20px;
+background-color: #fff;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.content-section {
+  height: 100vh; /* Each section takes up the full viewport height */
+}
+
+.content-section h1 {
+  margin-bottom: 20px;
+}
