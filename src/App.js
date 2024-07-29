@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa'; // Import icons
 import './App.css';
 import headshot from './images/headshot.JPG';
+import Experience from './Experience';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('About');
@@ -63,12 +65,35 @@ const App = () => {
       </nav>
       <div className="content">
         <section id="About" ref={sectionRefs.About} className="content-section">
-          <h1>ABOUT</h1>
-          <p>This is the about section.</p>
+          <h1>Matthew Hoang</h1>
+          <h5>Garden Grove, CA | (714) 618-2844 | MattHoang19@gmail.com</h5>
+          <p>hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world </p>
+          <div className="social-icons">
+            <a href="https://www.linkedin.com/in/matthewhhoang" target="_blank" rel="noopener noreferrer">
+              <FaLinkedin className="icon" />
+            </a>
+            <a href="https://github.com/Matt-Hoang" target="_blank" rel="noopener noreferrer">
+              <FaGithub className="icon" />
+            </a>
+            <a href="https://www.instagram.com/matt_hoang/" target="_blank" rel="noopener noreferrer">
+              <FaInstagram className="icon" />
+            </a>
+          </div>
         </section>
         <section id="Experience" ref={sectionRefs.Experience} className="content-section">
           <h1>EXPERIENCE</h1>
-          <p>This is the experience section.</p>
+          <Experience
+            position="Software Engineer"
+            company="Tech Company"
+            dates="Jan 2020 - Present"
+            description="Developed various web applications using React and Node.js."
+          />
+          <Experience
+            position="Software Engineer"
+            company="Tech Company"
+            dates="Jan 2020 - Present"
+            description="Developed various web applications using React and Node.js."
+          />
         </section>
         <section id="Education" ref={sectionRefs.Education} className="content-section">
           <h1>EDUCATION</h1>

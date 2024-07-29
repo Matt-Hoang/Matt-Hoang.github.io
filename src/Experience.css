@@ -1,0 +1,42 @@
+/* Experience.css */
+.experience {
+    margin-bottom: 20px;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.experience-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.position {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+
+.company {
+    font-size: 20px;
+    color: #555;
+    margin: 0;
+}
+
+.dates {
+    font-size: 16px;
+    color: #777;
+    margin: 0;
+}
+
+.experience-description {
+    margin-top: 10px;
+}
+
+.description {
+    font-size: 16px;
+    margin: 0;
+}
+  
