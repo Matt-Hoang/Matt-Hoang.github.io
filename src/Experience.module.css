@@ -1,14 +1,13 @@
-/* Experience.css */
 .experience {
     margin-bottom: 20px;
 }
 
-.experience-header {
+.experienceHeader {
     display: flex;
     justify-content: space-between;
 }
 
-.experience-info {
+.experienceInfo {
     display: flex;
     flex-direction: column;
 }
@@ -16,22 +15,24 @@
 .position {
     font-size: 24px;
     font-weight: bold;
+    color: var(--primary-text);
     margin: 0 0 5px 0;
 }
 
 .company {
     font-size: 20px;
-    color: #555;
+    color: var(--secondary-text);
     margin: 0;
 }
 
 .dates {
     font-size: 16px;
-    color: #777;
+    color: var(--primary-bg);
     margin: 0;
 }
 
-.experience-description {
+.experienceDescription {
+    color: var(--secondary-text);
     margin-top: 10px;
 }
 

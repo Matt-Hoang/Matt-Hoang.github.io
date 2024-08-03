@@ -3,6 +3,9 @@ import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa'; // Import ic
 import './App.css';
 import headshot from './images/headshot.JPG';
 import Experience from './Experience';
+import Education from './Education';
+import TechnicalSkills from './technical-skills';
+
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('About');
@@ -86,22 +89,66 @@ const App = () => {
             position="Software Engineer"
             company="Tech Company"
             dates="Jan 2020 - Present"
-            description="Developed various web applications using React and Node.js."
+            description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
           />
           <Experience
             position="Software Engineer"
             company="Tech Company"
             dates="Jan 2020 - Present"
-            description="Developed various web applications using React and Node.js."
+            description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
           />
         </section>
         <section id="Education" ref={sectionRefs.Education} className="content-section">
           <h1>EDUCATION</h1>
-          <p>This is the education section.</p>
+          <Education
+            school={"California State University Long Beach"}
+            degree={"Computer Science, B.S."}
+            dates={"##/## - ##/##"}
+            gpa={"#.##"}
+          />
+          <Education
+            school={"Bolsa Grande High School"}
+            degree={"High School Diploma"}
+            dates={"##/## - ##/##"}
+            gpa={"#.##"}
+          />
         </section>
         <section id="Skills" ref={sectionRefs.Skills} className="content-section">
           <h1>SKILLS</h1>
-          <p>This is the skills section.</p>
+          <TechnicalSkills
+            title="Programming and Development"
+            subsections={[
+              { title: 'Programming Languages', skills: ['Python', 'Java', 'C/C++', 'JavaScript', 'SQL', 'HTML/CSS'] },
+              { title: 'Web Development', skills: ['React.js', 'Node.js', 'Angular'] },
+            ]}
+          />
+          <TechnicalSkills
+            title="Systems and Infrastructure"
+            subsections={[
+              { title: 'DevOps and Cloud', skills: [] },
+              { title: 'Operating Systems', skills: ['Windows', 'Linux'] },
+              { title: 'Databases', skills: ['PostgresSQL', 'Firebase'] },
+            ]}
+          />
+          <TechnicalSkills
+            title="Tools and Methodologies"
+            subsections={[
+              { title: 'Version Control', skills: ['Git', 'GitHub'] },
+              { title: 'Software Development Methodologies', skills: ['Agile', 'Scrum', 'Waterfall'] },
+              { title: 'Other Tools', skills: ['Visual Studio Code', 'Postman', 'Figma'] },
+            ]}
+          />
+          <TechnicalSkills
+            title="Soft Skills"
+            subsections={[
+              { title: 'Problem-Solving', skills: ['Analytical thinking', 'Debugging and troubleshooting'] },
+              { title: 'Communication', skills: ['Written and verbal communication', 'Technical writing'] },
+              { title: 'Teamwork and Collaboration', skills: ['Experience working in teams', 'Collaboration tools (Microsoft Teams)'] },
+              { title: 'Project Management', skills: ['Task prioritization', 'Time management'] },
+              { title: 'Creativity', skills: ['Innovating thinking', 'Designing user-friendly interfaces'] },
+              { title: 'Adatability', skills: ['Ability to learn new technolgies quickly'] }
+            ]}
+          />
         </section>
         <section id="Interests" ref={sectionRefs.Interests} className="content-section">
           <h1>INTERESTS</h1>

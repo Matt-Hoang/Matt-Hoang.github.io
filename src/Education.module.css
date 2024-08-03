@@ -1,0 +1,25 @@
+/* Experience.css */
+
+.education {
+    display: flex;
+    justify-content: space-between;
+}
+
+.school {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-text);
+    margin: 0 0 5px 0;
+}
+
+.degree {
+    font-size: 20px;
+    color: var(--secondary-text);
+    margin: 0;
+}
+
+.dates {
+    font-size: 16px;
+    margin: 0;
+}
+

@@ -1,10 +1,14 @@
 /* === generic === */
 :root {
-  --primary-color: #3498db;
-  --secondary-color: #71CED9;
-  --background-color: #fff;
-  --light-text-color: #fff;
-  --dark-text-color: #222529;
+  /* background colors */
+  --primary-bg: #3498db;
+  --accent-bg: #71CED9;
+  --secondary-bg: #fff;
+
+  /* text colors */
+  --primary-text: #202020;
+  --secondary-text: #505050;
+  --accent-text: #fff;
 }
 
 html {
@@ -23,14 +27,14 @@ html {
   justify-content: center;
   align-items: center;
   width: 300px;
-  background-color: var(--primary-color);
+  background-color: var(--primary-bg);
   padding: 15px;
   box-shadow: 2px 0 5px rgba(0,0,0,0.1);
 }
 
 .headshot-img {
   width: 80%;
-  border: 5px solid var(--background-color);
+  border: 5px solid var(--secondary-bg);
 }
 
 .nav ul {
@@ -41,7 +45,7 @@ html {
 .nav li {
   /* text and font styles */
   text-align: center;
-  color: var(--light-text-color);
+  color: var(--accent-text);
   font-size: 20px;
   font-weight: 500;
   /* layout and spacing */
@@ -62,7 +66,7 @@ html {
 .content {
 flex: 1;
 padding: 20px;
-background-color: var(--background-color);
+background-color: var(--secondary-bg);
 }
 
 .content {
@@ -90,17 +94,17 @@ background-color: var(--background-color);
 }
 
 .social-icons .icon {
-  color: var(--background-color);
+  color: var(--secondary-bg);
   font-size: 35px;
   transition: color 0.3s ease;
 }
 
 .social-icons .icon:hover {
-  color: var(--dark-text-color);
+  color: var(--primary-text);
 }
 
 .social-icons a {
-  background-color: var(--primary-color);
+  background-color: var(--primary-bg);
   display: flex;
   align-items: center;
   justify-content: center;
