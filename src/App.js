@@ -1,9 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa'; // Import icons
 import './App.css';
-import headshot from './images/headshot.JPG';
 import Experience from './Experience';
-import Education from './Education';
+import Projects from './Projects';
 import TechnicalSkills from './technical-skills';
 
 
@@ -13,9 +12,8 @@ const App = () => {
   const sectionRefs = {
     About: useRef(null),
     Experience: useRef(null),
-    Education: useRef(null),
+    Projects: useRef(null),
     Skills: useRef(null),
-    Interests: useRef(null),
     Contact: useRef(null)
   };
 
@@ -56,13 +54,12 @@ const App = () => {
   return (
     <div className="layout">
       <nav className="nav">
-        <img src={headshot} alt="headshot" className="headshot-img" />
+        <img src={require('./images/headshot.JPG')} alt="headshot" className="headshot-img" />
         <ul>
           <li className={activeSection === 'About' ? 'active' : ''} onClick={() => handleScrollToSection('About')}>ABOUT</li>
           <li className={activeSection === 'Experience' ? 'active' : ''} onClick={() => handleScrollToSection('Experience')}>EXPERIENCE</li>
-          <li className={activeSection === 'Education' ? 'active' : ''} onClick={() => handleScrollToSection('Education')}>EDUCATION</li>
+          <li className={activeSection === 'Projects' ? 'active' : ''} onClick={() => handleScrollToSection('Projects')}>PROJECTS</li>
           <li className={activeSection === 'Skills' ? 'active' : ''} onClick={() => handleScrollToSection('Skills')}>SKILLS</li>
-          <li className={activeSection === 'Interests' ? 'active' : ''} onClick={() => handleScrollToSection('Interests')}>INTERESTS</li>
           <li className={activeSection === 'Contact' ? 'active' : ''} onClick={() => handleScrollToSection('Contact')}>CONTACT</li>
         </ul>
       </nav>
@@ -98,61 +95,162 @@ const App = () => {
             description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
           />
         </section>
-        <section id="Education" ref={sectionRefs.Education} className="content-section">
-          <h1>EDUCATION</h1>
-          <Education
-            school={"California State University Long Beach"}
-            degree={"Computer Science, B.S."}
-            dates={"##/## - ##/##"}
-            gpa={"#.##"}
-          />
-          <Education
-            school={"Bolsa Grande High School"}
-            degree={"High School Diploma"}
-            dates={"##/## - ##/##"}
-            gpa={"#.##"}
-          />
+        <section id="Projects" ref={sectionRefs.Projects} className="content-section">
+          <h1>PROJECTS</h1>
+          <div className="project-container">
+            <Projects
+              title="Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test "
+              skills="Skill Skill Skill Skill Skill Skill Skill Skill Skill Skill Skill Skill "
+              image={require('./images/skills/python-logo.png')}
+            />
+            <Projects
+              title="Opentext ExStream Cloud Edition"
+              skills="React"
+              image={require('./images/skills/python-logo.png')}
+            />
+            <Projects
+              title="Census Helper Tool"
+              skills="Python | MVC | Pipelines"
+              image={require('./images/skills/python-logo.png')}
+            />
+            <Projects
+              title="Personal Website"
+              skills="React"
+              image={require('./images/skills/python-logo.png')}
+            />
+            <Projects
+              title="Dungeon Master"
+              skills="Java - Design Patterns"
+              image={require('./images/skills/python-logo.png')}
+            />
+          </div>
         </section>
         <section id="Skills" ref={sectionRefs.Skills} className="content-section">
           <h1>SKILLS</h1>
           <TechnicalSkills
             title="Programming and Development"
             subsections={[
-              { title: 'Programming Languages', skills: ['Python', 'Java', 'C/C++', 'JavaScript', 'SQL', 'HTML/CSS'] },
-              { title: 'Web Development', skills: ['React.js', 'Node.js', 'Angular'] },
+              { 
+                title: 'Programming Languages', 
+                skills: [
+                  {name: 'Python', logo: require('./images/skills/python-logo.png')},
+                  {name: 'Java', logo: require('./images/skills/java-logo.png')},
+                  {name: 'C++', logo: require('./images/skills/cpp-logo.png')},
+                  {name: 'JavaScript', logo: require('./images/skills/js-logo.png')},
+                  {name: 'HTML', logo: require('./images/skills/html-logo.png')},
+                  {name: 'CSS', logo: require('./images/skills/css-logo.png')},
+                  {name: 'SQL', logo: require('./images/skills/sql-icon.png')},
+                ] 
+              },
+              { 
+                title: 'Web Development', 
+                skills: [
+                  {name: 'React.js', logo: require('./images/skills/react-icon.png')},
+                  {name: 'Node.js', logo: require('./images/skills/node-js-icon.png')},
+                  {name: 'Angular', logo: require('./images/skills/angular-icon.png')},
+                ] 
+              },
             ]}
           />
           <TechnicalSkills
             title="Systems and Infrastructure"
             subsections={[
-              { title: 'DevOps and Cloud', skills: [] },
-              { title: 'Operating Systems', skills: ['Windows', 'Linux'] },
-              { title: 'Databases', skills: ['PostgresSQL', 'Firebase'] },
+              { 
+                title: 'DevOps and Cloud', 
+                skills: [
+                  {name: 'Azure DevOps', logo: require('./images/skills/azure-devops-icon.png')},
+                ] 
+              },
+              { 
+                title: 'Operating Systems', 
+                skills: [
+                  {name: 'Windows', logo: require('./images/skills/windows-icon.png')},
+                  {name: 'Linux', logo: require('./images/skills/linux-icon.png')},
+                ] 
+              },
+              { 
+                title: 'Databases', 
+                skills: [
+                  {name: 'PostgresSQL', logo: require('./images/skills/postgresql-icon.png')},
+                  {name: 'Firebase', logo: require('./images/skills/firebase-icon.png')},
+                ] 
+              },
             ]}
           />
           <TechnicalSkills
             title="Tools and Methodologies"
             subsections={[
-              { title: 'Version Control', skills: ['Git', 'GitHub'] },
-              { title: 'Software Development Methodologies', skills: ['Agile', 'Scrum', 'Waterfall'] },
-              { title: 'Other Tools', skills: ['Visual Studio Code', 'Postman', 'Figma'] },
+              { 
+                title: 'Version Control', 
+                skills: [
+                  {name: 'Git', logo: require('./images/skills/git-icon.png')},
+                  {name: 'GitHub', logo: require('./images/skills/github-icon.png')},
+                ] 
+              },
+              { 
+                title: 'Software Development Methodologies', 
+                skills: [
+                  {name: 'Agile', logo: ''},
+                  {name: 'Scrum', logo: ''},
+                  {name: 'Waterfall', logo: ''},
+                ] 
+              },
+              { 
+                title: 'Other Tools', 
+                skills: [
+                  {name: 'Visual Studio Code', logo: require('./images/skills/visual-studio-code-icon.png')},
+                  {name: 'Postman', logo: require('./images/skills/postman-icon.png')},
+                  {name: 'Figma', logo: require('./images/skills/figma-icon.png')},
+                ] 
+              },
             ]}
           />
           <TechnicalSkills
             title="Soft Skills"
             subsections={[
-              { title: 'Problem-Solving', skills: ['Analytical thinking', 'Debugging and troubleshooting'] },
-              { title: 'Communication', skills: ['Written and verbal communication', 'Technical writing'] },
-              { title: 'Teamwork and Collaboration', skills: ['Experience working in teams', 'Collaboration tools (Microsoft Teams)'] },
-              { title: 'Project Management', skills: ['Task prioritization', 'Time management'] },
-              { title: 'Creativity', skills: ['Innovating thinking', 'Designing user-friendly interfaces'] },
-              { title: 'Adatability', skills: ['Ability to learn new technolgies quickly'] }
+              { 
+                title: 'Problem-Solving', 
+                skills: [
+                  {name: 'Analytical thinking', logo: ''},
+                  {name: 'Debugging and troubleshooting', logo: ''},
+                ] 
+              },
+              { 
+                title: 'Communication', 
+                skills: [
+                  {name: 'Written and verbal communication', logo: ''},
+                  {name: 'Technical writing', logo: ''},
+                ] 
+              },
+              { 
+                title: 'Teamwork and Collaboration', 
+                skills: [
+                  {name: 'Experience working in teams', logo: ''},
+                  {name: 'Collaboration tools (Microsoft Teams)', logo: ''},
+                ] 
+              },
+              { 
+                title: 'Project Management', 
+                skills: [
+                  {name: 'Task prioritization', logo: ''},
+                  {name: 'Time management', logo: ''},
+                ] 
+              },
+              { 
+                title: 'Creativity', 
+                skills: [
+                  {name: 'Innovating thinking', logo: ''},
+                  {name: 'Designing user-friendly interfaces', logo: ''},
+                ] 
+              },
+              { 
+                title: 'Adatability', 
+                skills: [
+                  {name: 'Ability to learn new technolgies quickly', logo: ''},
+                ] 
+              }
             ]}
           />
-        </section>
-        <section id="Interests" ref={sectionRefs.Interests} className="content-section">
-          <h1>INTERESTS</h1>
-          <p>This is the interests section.</p>
         </section>
         <section id="Contact" ref={sectionRefs.Contact} className="content-section">
           <h1>CONTACT</h1>

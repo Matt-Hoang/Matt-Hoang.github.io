@@ -1,0 +1,17 @@
+.technicalSkills > ul > li {
+    display: flex;
+}
+
+.skillList {
+    display: flex;
+}
+
+.skillItem {
+    display: flex;
+    margin-left: 5px;
+}
+
+.skillLogo {
+    height: 20px;
+    margin-right: 5px;
+}

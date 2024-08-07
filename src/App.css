@@ -72,13 +72,15 @@ background-color: var(--secondary-bg);
 .content {
   flex: 1;
   overflow-y: auto; /* Enable vertical scrolling */
+  padding: 0;
 }
 
 .content-section {
-  height: 100vh; /* Each section takes up the full viewport height */
+  min-height: 100vh; /* Each section takes up the full viewport height */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-top: 1px solid var(--secondary-text);
 }
 
 .content-section h1 {
@@ -111,4 +113,12 @@ background-color: var(--secondary-bg);
   width: 60px;
   height: 60px;
   border-radius: 50%;
+}
+
+/* Projects */
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
 }

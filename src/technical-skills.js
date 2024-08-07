@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './technical-skills.module.css'; // Renamed import to `styles`
+import styles from './technical-skills.module.css';
 
 const TechnicalSkills = ({ title, subsections }) => {
     return (
@@ -8,7 +8,18 @@ const TechnicalSkills = ({ title, subsections }) => {
             <ul>
                 {subsections.map((subsection, index) => (
                     <li key={index}>
-                        <b>{subsection.title}:</b> {subsection.skills.join(', ')}
+                        <b>{subsection.title}:</b>
+                        <span className={styles.skillList}>
+                            {subsection.skills.map((skill, skillIndex) => (
+                                <span key={skillIndex} className={styles.skillItem}>
+                                    {skill.logo && (
+                                        <img src={skill.logo} alt={`${skill.name} logo`} className={styles.skillLogo} />
+                                    )}                                    
+                                    {skill.name}
+                                    {skillIndex < subsection.skills.length - 1 && ', '}
+                                </span>
+                            ))}
+                        </span>
                     </li>
                 ))}
             </ul>

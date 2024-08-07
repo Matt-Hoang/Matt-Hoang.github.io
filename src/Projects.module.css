@@ -1,0 +1,36 @@
+.project {
+    background-color: var(--secondary-text);
+    border: 3px solid var(--primary-text);
+    color: var(--accent-text);
+    margin: 20px 20px;
+    width: 300px;
+}
+
+.project:hover {
+    border: 3px solid var(--primary-bg);
+}
+
+.imageContainer {
+    border-bottom: 3px solid var(--primary-text);
+    width: inherit;
+    height: 200px;
+}
+
+.image {
+    width: inherit;
+    height: inherit;
+    object-fit: contain;
+}
+
+.info {
+    padding: 0 10px;
+}
+
+.title {
+    margin: 5px 0;
+}
+
+.skills {
+    margin: 5px 0 10px 0;
+}
+
