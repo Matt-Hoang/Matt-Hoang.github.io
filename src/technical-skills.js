@@ -16,7 +16,7 @@ const TechnicalSkills = ({ title, subsections }) => {
                                         <img src={skill.logo} alt={`${skill.name} logo`} className={styles.skillLogo} />
                                     )}                                    
                                     {skill.name}
-                                    {skillIndex < subsection.skills.length - 1 && ', '}
+                                    {skillIndex < subsection.skills.length - 1 && ' • '}
                                 </span>
                             ))}
                         </span>

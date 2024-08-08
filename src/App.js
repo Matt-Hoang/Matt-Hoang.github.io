@@ -64,10 +64,14 @@ const App = () => {
         </ul>
       </nav>
       <div className="content">
-        <section id="About" ref={sectionRefs.About} className="content-section">
-          <h1>Matthew Hoang</h1>
-          <h5>Garden Grove, CA | (714) 618-2844 | MattHoang19@gmail.com</h5>
-          <p>hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world </p>
+        <section id="about" ref={sectionRefs.About} className="content-section">
+          <h1>
+            <span className="first-name">MATT </span>
+            <span className="last-name">HOANG</span>
+          </h1>
+          <h5>Garden Grove, CA • (714) 618-2844 • MattHoang19@gmail.com</h5>
+          <p>Hi, I’m Matt Hoang! I graduated from California State University Long Beach (CSULB) with a bachelor’s degree in computer science. My primary focus is software development, where I’ve built a variety of web and desktop applications. I’m also keen on expanding my expertise into data and analytics as well as IT infrastructure and security.</p>
+          <p>Outside of my professional pursuits, I cherish time with my dog Lulu and my family. I’m passionate about staying active, whether it’s indoor bouldering and lifting during the week or exploring the great outdoors with hiking and backpacking whenever I can.</p>
           <div className="social-icons">
             <a href="https://www.linkedin.com/in/matthewhhoang" target="_blank" rel="noopener noreferrer">
               <FaLinkedin className="icon" />
@@ -83,15 +87,15 @@ const App = () => {
         <section id="Experience" ref={sectionRefs.Experience} className="content-section">
           <h1>EXPERIENCE</h1>
           <Experience
-            position="Software Engineer"
-            company="Tech Company"
+            position="Digital Technology Intern"
+            company="Pacific Life"
             dates="Jan 2020 - Present"
             description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
           />
           <Experience
-            position="Software Engineer"
-            company="Tech Company"
-            dates="Jan 2020 - Present"
+            position="Cloud Engineering/Computer Science Intern"
+            company="Scientific Applications & Research Associates, (SARA) Inc. · Internship"
+            dates="May 2022 - March 2023"
             description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
           />
         </section>
