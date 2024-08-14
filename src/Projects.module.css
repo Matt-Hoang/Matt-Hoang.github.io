@@ -1,13 +1,17 @@
+.projectContainer {
+    display: flex;
+    margin: 20px;
+}
+
 .project {
     background-color: var(--secondary-text);
-    border: 3px solid var(--primary-text);
+    border: 5px solid var(--primary-text);
     color: var(--accent-text);
-    margin: 20px 20px;
     width: 300px;
 }
 
 .project:hover {
-    border: 3px solid var(--primary-bg);
+    border: 5px solid var(--primary-bg);
 }
 
 .imageContainer {
@@ -28,9 +32,35 @@
 
 .title {
     margin: 5px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .skills {
     margin: 5px 0 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Details panel for expanded content */
+.detailsPanel {
+    background-color: var(--primary-bg);
+    border: 5px solid var(--primary-text);
+    color: var(--primary-text);
+    width: 50vw;
+    animation: slide-in 0.3s ease;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 

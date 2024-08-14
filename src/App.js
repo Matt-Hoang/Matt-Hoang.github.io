@@ -103,13 +103,13 @@ const App = () => {
           <h1>PROJECTS</h1>
           <div className="project-container">
             <Projects
-              title="Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test "
-              skills="Skill Skill Skill Skill Skill Skill Skill Skill Skill Skill Skill Skill "
+              title="QuackQuackGo"
+              skills="HTML | CSS | JS | Firebase | APIs"
               image={require('./images/skills/python-logo.png')}
             />
             <Projects
-              title="Opentext ExStream Cloud Edition"
-              skills="React"
+              title="Document Generation"
+              skills="Opentext ExStream Cloud Edition"
               image={require('./images/skills/python-logo.png')}
             />
             <Projects
