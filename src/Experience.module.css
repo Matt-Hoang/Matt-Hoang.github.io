@@ -29,6 +29,7 @@
     font-size: 16px;
     color: var(--primary-bg);
     margin: 0;
+    font-weight: 500;
 }
 
 .experienceDescription {

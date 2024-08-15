@@ -64,7 +64,7 @@ const App = () => {
         </ul>
       </nav>
       <div className="content">
-        <section id="about" ref={sectionRefs.About} className="content-section">
+        <section id="About" ref={sectionRefs.About} className="content-section">
           <h1>
             <span className="first-name">MATT </span>
             <span className="last-name">HOANG</span>
@@ -87,9 +87,21 @@ const App = () => {
         <section id="Experience" ref={sectionRefs.Experience} className="content-section">
           <h1>EXPERIENCE</h1>
           <Experience
+            position="Information Technolgy Leadership Program"
+            company="Pacific Life"
+            dates="July 2024 - Present"
+            description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
+          />
+          <Experience
+            position="Application Developer"
+            company="Pacific Life"
+            dates="January 2024 - June 2024"
+            description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
+          />
+          <Experience
             position="Digital Technology Intern"
             company="Pacific Life"
-            dates="Jan 2020 - Present"
+            dates="May 2023 - December 2023"
             description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
           />
           <Experience
@@ -101,31 +113,30 @@ const App = () => {
         </section>
         <section id="Projects" ref={sectionRefs.Projects} className="content-section">
           <h1>PROJECTS</h1>
-          <div className="project-container">
-            <Projects
-              title="QuackQuackGo"
-              skills="HTML | CSS | JS | Firebase | APIs"
-              image={require('./images/skills/python-logo.png')}
-            />
-            <Projects
-              title="Document Generation"
-              skills="Opentext ExStream Cloud Edition"
-              image={require('./images/skills/python-logo.png')}
-            />
-            <Projects
-              title="Census Helper Tool"
-              skills="Python | MVC | Pipelines"
-              image={require('./images/skills/python-logo.png')}
-            />
+          <div>
             <Projects
               title="Personal Website"
               skills="React"
-              image={require('./images/skills/python-logo.png')}
+              image={require('./images/projects/Personal-Website.png')}
+              description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
+            />
+            <Projects
+              title="Census Helper Tool"
+              skills="Python | MVC | JFrog Artifactory | SonarQube | Pipelines"
+              image={require('./images/projects/Census-Helper.png')}
+              description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
+            />
+            <Projects
+              title="QuackQuackGo"
+              skills="HTML | CSS | JS | Firebase | APIs"
+              image={require('./images/projects/QuackQuackGo.jpeg')}
+              description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
             />
             <Projects
               title="Dungeon Master"
               skills="Java - Design Patterns"
-              image={require('./images/skills/python-logo.png')}
+              image={require('./images/projects/Dungeon-Master.jpg')}
+              description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
             />
           </div>
         </section>
