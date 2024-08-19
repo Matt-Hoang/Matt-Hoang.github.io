@@ -4,6 +4,7 @@ import './App.css';
 import Experience from './Experience';
 import Projects from './Projects';
 import TechnicalSkills from './technical-skills';
+import ContactForm from './ContactForm';
 
 
 const App = () => {
@@ -281,7 +282,7 @@ const App = () => {
         </section>
         <section id="Contact" ref={sectionRefs.Contact} className="content-section">
           <h1>CONTACT</h1>
-          <p>This is the contact section.</p>
+          <ContactForm />
         </section>
       </div>
     </div>
