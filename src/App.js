@@ -119,6 +119,9 @@ const App = () => {
               skills="React"
               image={require('./images/projects/Personal-Website.png')}
               description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
+              links = {[
+                {text: "GitHub", url: ""},
+              ]}
             />
             <Projects
               title="Census Helper Tool"
@@ -131,12 +134,21 @@ const App = () => {
               skills="HTML | CSS | JS | Firebase | APIs"
               image={require('./images/projects/QuackQuackGo.jpeg')}
               description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
+              links = {[
+                {text: "GitHub", url: ""},
+                {text: "Youtube", url: ""}
+              ]}
             />
             <Projects
               title="Dungeon Master"
               skills="Java - Design Patterns"
               image={require('./images/projects/Dungeon-Master.jpg')}
               description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
+              links = {[
+                {text: "GitHub", url: ""},
+                {text: "Youtube", url: ""},
+                {text: "Replit", url: ""},
+              ]}
             />
           </div>
         </section>
