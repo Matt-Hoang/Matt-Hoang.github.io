@@ -1,43 +1,101 @@
 .experience {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
-.experienceHeader {
-    display: flex;
-    justify-content: space-between;
+.experience h5, .experience h3 {
+  font-size: 1.5rem;
 }
 
-.experienceInfo {
-    display: flex;
-    flex-direction: column;
+.companyDetails {
+  display: flex;
+  align-items: center;
 }
 
-.position {
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--primary-text);
-    margin: 0 0 5px 0;
+.companyImage {
+  width: 50px;
+  height: fit-content;
+  margin-right: 10px;
 }
 
 .company {
-    font-size: 20px;
-    color: var(--secondary-text);
-    margin: 0;
+  font-size: 20px;
+  color: var(--secondary-text);
+  margin: 0;
+}
+
+.positionsContainer {
+  position: relative;
+  padding-left: 35px;
+}
+
+.positionItem {
+  position: relative;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.dotLine {
+  position: absolute;
+  left: -15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--secondary-text);
+  border-radius: 50%;
+  z-index: 1;
+  margin-top: 12px;
+}
+
+.line {
+  width: 2px;
+  background-color: var(--secondary-text);
+  position: absolute;
+  top: 18px;
+  left: calc(50% - 1px);
+  z-index: 0;
+  margin-top: 15px;
+}
+
+.experienceContent {
+  margin-left: 25px;
+}
+
+.experienceHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.experienceInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.position {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary-text);
+  margin: 0 0 5px 0;
 }
 
 .dates {
-    font-size: 16px;
-    color: var(--primary-bg);
-    margin: 0;
-    font-weight: 500;
+  font-size: 16px;
+  color: var(--primary-bg);
+  margin: 0;
+  font-weight: 500;
 }
 
 .experienceDescription {
-    color: var(--secondary-text);
-    margin-top: 10px;
+  color: var(--secondary-text);
+  margin-top: 5px;
 }
 
 .description {
-    font-size: 16px;
-    margin: 0;
+  font-size: 16px;
+  margin: 0;
 }

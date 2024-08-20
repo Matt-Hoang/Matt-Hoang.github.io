@@ -88,29 +88,41 @@ const App = () => {
         <section id="Experience" ref={sectionRefs.Experience} className="content-section">
           <h1>EXPERIENCE</h1>
           <Experience
-            position="Information Technolgy Leadership Program"
-            company="Pacific Life"
-            dates="July 2024 - Present"
-            description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
+            company={{
+              logo: require('./images/companies/paclife_logo.JPG'),
+              name: "Pacific Life"
+            }}
+            positions={[
+              {
+                position: "Information Technolgy Leadership Program",
+                dates: "July 2024 - Present",
+                description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
+              },
+              {
+                position: "Application Developer",
+                dates: "January 2024 - June 2024",
+                description: " ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"    
+              },
+              {
+                position: "Digital Technology Intern",
+                dates: "May 2023 - December 2023",
+                description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
+              }
+            ]}
           />
           <Experience
-            position="Application Developer"
-            company="Pacific Life"
-            dates="January 2024 - June 2024"
-            description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
-          />
-          <Experience
-            position="Digital Technology Intern"
-            company="Pacific Life"
-            dates="May 2023 - December 2023"
-            description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
-          />
-          <Experience
-            position="Cloud Engineering/Computer Science Intern"
-            company="Scientific Applications & Research Associates, (SARA) Inc. · Internship"
-            dates="May 2022 - March 2023"
-            description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
-          />
+            company={{
+              logo: require('./images/companies/sara_logo.JPG'),
+              name: "Scientific Applications & Research Associates, (SARA) Inc."
+            }}
+            positions={[
+              {
+                position: "Cloud Engineering/Computer Science Intern",
+                dates: "May 2022 - March 2023",
+                description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"    
+              }
+            ]}
+                      />
         </section>
         <section id="Projects" ref={sectionRefs.Projects} className="content-section">
           <h1>PROJECTS</h1>
@@ -121,7 +133,8 @@ const App = () => {
               image={require('./images/projects/Personal-Website.png')}
               description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
               links = {[
-                {text: "GitHub", url: ""},
+                {text: "Figma", url: ""},
+                {text: "GitHub", url: ""}
               ]}
             />
             <Projects
@@ -136,6 +149,7 @@ const App = () => {
               image={require('./images/projects/QuackQuackGo.jpeg')}
               description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
               links = {[
+                {text: "Figma", url: ""},
                 {text: "GitHub", url: ""},
                 {text: "Youtube", url: ""}
               ]}
@@ -147,8 +161,8 @@ const App = () => {
               description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
               links = {[
                 {text: "GitHub", url: ""},
-                {text: "Youtube", url: ""},
                 {text: "Replit", url: ""},
+                {text: "Youtube", url: ""}
               ]}
             />
           </div>

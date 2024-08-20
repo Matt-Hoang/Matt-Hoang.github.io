@@ -3,13 +3,19 @@
     margin-bottom: 25px;
 }
 
-.image {
+.desktopImage {
     width: 250px;
     box-shadow: 5px 5px 15px -10px rgba(0,0,0,0.75);
     outline: 1px solid rgba(0,0,0,0.5);
     margin-top: 10px;
 }
 
+.mobileImage {
+    width: 250px;
+    box-shadow: 5px 5px 15px -10px rgba(0,0,0,0.75);
+    outline: 1px solid rgba(0,0,0,0.5);
+    margin-top: 10px;
+}
 .details {
     margin-left: 25px;
 }
@@ -59,4 +65,26 @@
 
 .linkList a:active {
     text-decoration: underline;
+}
+
+/* Media query for desktop screens */
+@media (min-width: 768px) {
+    .desktopImage {
+        display: block; 
+    }
+
+    .mobileImage {
+        display: none; 
+    }
+}
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+    .desktopImage {
+        display: none; 
+    }
+
+    .mobileImage {
+        display: block; 
+    }
 }
