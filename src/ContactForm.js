@@ -27,13 +27,22 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
+    
+    const recaptchaValue = window.grecaptcha.getResponse();
+    if (!recaptchaValue) {
+      setResponseMessage('Please complete the reCAPTCHA.');
+      setIsSubmitting(false);
+      return;
+    }
+    
     const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
     const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
     const userID = process.env.REACT_APP_EMAILJS_USER_ID;
 
-    emailjs
-      .send(serviceID, templateID, { ...formData, 'g-recaptcha-response': captchaToken }, userID)
+    emailjs.send(serviceID, templateID, { 
+      ...formData, 
+      'g-recaptcha-response': recaptchaValue 
+    }, userID)
       .then(
         (response) => {
           console.log('SUCCESS!', response.status, response.text);
@@ -52,11 +61,8 @@ const ContactForm = () => {
           message: '',
         });
         setCaptchaToken('');
+        window.grecaptcha.reset();
       });
-  };
-
-  const onCaptchaChange = (token) => {
-    setCaptchaToken(token);
   };
 
   return (
@@ -69,6 +75,7 @@ const ContactForm = () => {
             type="text"
             name="name"
             id="name"
+            placeholder="John Doe"
             value={formData.name}
             onChange={handleChange}
             required
@@ -80,6 +87,7 @@ const ContactForm = () => {
             type="email"
             name="email"
             id="email"
+            placeholder="JohnDoe@email.com"
             value={formData.email}
             onChange={handleChange}
             required
@@ -98,8 +106,7 @@ const ContactForm = () => {
         </div>
         <ReCAPTCHA
           sitekey={RECAPTCHA_SITE_KEY}
-          onChange={onCaptchaChange}
-          size="invisible"
+          onChange={setCaptchaToken}
         />
         <button type="submit" disabled={isSubmitting}>
           {isSubmitting ? 'Sending...' : 'Send Message'}

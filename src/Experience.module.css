@@ -14,7 +14,7 @@
 .companyImage {
   width: 50px;
   height: fit-content;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 .company {
@@ -63,7 +63,7 @@
 }
 
 .experienceContent {
-  margin-left: 25px;
+  margin-left: 30px;
 }
 
 .experienceHeader {
@@ -86,7 +86,7 @@
 .dates {
   font-size: 16px;
   color: var(--primary-bg);
-  margin: 0;
+  margin: 0 0 0 20px;
   font-weight: 500;
 }
 

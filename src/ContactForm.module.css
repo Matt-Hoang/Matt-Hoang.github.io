@@ -1,43 +1,51 @@
 .contactForm {
-    max-width: 600px;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 10px;
-  }
-  
-  .formGroup {
-    margin-bottom: 15px;
-  }
-  
-  .formGroup label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  .formGroup input,
-  .formGroup textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  button {
-    padding: 10px 15px;
-    background-color: var(--primary-bg);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
-  .responseMessage {
-    margin-top: 15px;
-    font-weight: bold;
-  }
-  
+  max-width: 500px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.formGroup input,
+.formGroup textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.formGroup input::placeholder {
+  color: #ccc
+}
+
+button {
+  padding: 10px 15px;
+  width: 200px;
+  background-color: var(--primary-bg);
+  color: var(--accent-text);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block; /* Ensure the button is a block-level element */
+  margin: 20px auto 0; /* Center horizontally and add margin at the top */
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.responseMessage {
+  margin-top: 15px;
+  font-weight: bold;
+}

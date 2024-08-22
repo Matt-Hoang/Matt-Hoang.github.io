@@ -89,7 +89,7 @@ const App = () => {
           <h1>EXPERIENCE</h1>
           <Experience
             company={{
-              logo: require('./images/companies/paclife_logo.JPG'),
+              logo: require('./images/experiences/paclife_logo.JPG'),
               name: "Pacific Life"
             }}
             positions={[
@@ -112,7 +112,7 @@ const App = () => {
           />
           <Experience
             company={{
-              logo: require('./images/companies/sara_logo.JPG'),
+              logo: require('./images/experiences/sara_logo.JPG'),
               name: "Scientific Applications & Research Associates, (SARA) Inc."
             }}
             positions={[
