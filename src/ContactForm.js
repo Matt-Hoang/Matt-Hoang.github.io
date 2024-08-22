@@ -27,43 +27,64 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+  
     const recaptchaValue = window.grecaptcha.getResponse();
     if (!recaptchaValue) {
       setResponseMessage('Please complete the reCAPTCHA.');
       setIsSubmitting(false);
       return;
     }
-    
-    const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-    const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-    const userID = process.env.REACT_APP_EMAILJS_USER_ID;
-
-    emailjs.send(serviceID, templateID, { 
-      ...formData, 
-      'g-recaptcha-response': recaptchaValue 
-    }, userID)
-      .then(
-        (response) => {
-          console.log('SUCCESS!', response.status, response.text);
-          setResponseMessage('Your message has been sent!');
-        },
-        (err) => {
-          console.error('FAILED...', err);
-          setResponseMessage('There was an error sending your message.');
-        }
-      )
-      .finally(() => {
+  
+    // Send the reCAPTCHA token to your backend for verification
+    fetch('http://localhost:5000/verify-recaptcha', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token: recaptchaValue }),
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.message === 'reCAPTCHA verified successfully') {
+        // reCAPTCHA verification passed, send the email
+        const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+        const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+        const userID = process.env.REACT_APP_EMAILJS_USER_ID;
+  
+        emailjs.send(serviceID, templateID, { 
+          ...formData, 
+          'g-recaptcha-response': recaptchaValue 
+        }, userID)
+          .then(
+            (response) => {
+              console.log('SUCCESS!', response.status, response.text);
+              setResponseMessage('Your message has been sent!');
+            },
+            (err) => {
+              console.error('FAILED...', err);
+              setResponseMessage('There was an error sending your message.');
+            }
+          )
+          .finally(() => {
+            setIsSubmitting(false);
+            setFormData({
+              name: '',
+              email: '',
+              message: '',
+            });
+            setCaptchaToken('');
+            window.grecaptcha.reset();
+          });
+      } else {
+        setResponseMessage('reCAPTCHA verification failed. Please try again.');
         setIsSubmitting(false);
-        setFormData({
-          name: '',
-          email: '',
-          message: '',
-        });
-        setCaptchaToken('');
-        window.grecaptcha.reset();
-      });
+      }
+    })
+    .catch((error) => {
+      console.error('Error verifying reCAPTCHA:', error);
+      setResponseMessage('There was an error verifying reCAPTCHA.');
+      setIsSubmitting(false);
+    });
   };
+  
 
   return (
     <div className={styles.contactForm}>
