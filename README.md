@@ -1,3 +1,11 @@
+# Runnig Locally
+1. in one console run `npm start` 
+2. in a nnew console, cd into backend folder then run `node start` to start the backend js express server
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

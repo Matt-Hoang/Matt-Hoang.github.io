@@ -33,7 +33,11 @@ app.post('/verify-recaptcha', async (req, res) => {
     const secretKey = process.env.RECAPTCHA_SECRET_KEY; 
     const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${token}`;
 
-    const response = await axios.post(verificationURL);
+    const response = await axios.post(verificationURL, null, {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    });
 
     if (response.data.success) {
       return res.status(200).json({ message: 'reCAPTCHA verified successfully' });
