@@ -96,17 +96,41 @@ const App = () => {
               {
                 position: "Information Technolgy Leadership Program",
                 dates: "July 2024 - Present",
-                description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
+                description: [
+                  { type: "level-one", content: "Participating in a rotational program consisting of four 6-month rotations though various technology departments at Pacific Life to build strong technical and analytical skills." },
+                  { type: "level-one", content: "Rotation 1: Applications Developer" },
+                  { type: "level-one", content: "Rotation 2: TBD" },
+                  { type: "level-one", content: "Rotation 3: TBD" },
+                  { type: "level-one", content: "Rotation 4: TBD" },
+
+                ]
               },
               {
                 position: "Application Developer",
                 dates: "January 2024 - June 2024",
-                description: " ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"    
+                description: [
+                  { type: "level-one", content: "Census Application" },
+                  { type: "level-two", content: "Led refactor of Python-based UI tool, improving quote generation for Workforce Benefits Division." },
+                  { type: "level-two", content: "Transitioned to PyQt Model View architecture, enhancing data integrity and maintainability." },
+                  { type: "level-two", content: "Implemented SonarQube pipeline for security compliance and automated build deployment." },
+                  { type: "level-two", content: "Documented processes and led Knowledge Transfer (KT) sessions." },
+                  { type: "level-one", content: "Document Generation" },
+                  { type: "level-two", content: "Contributed to document management using OpenText ExStream for personalized, compliant communications." },
+                  { type: "level-two", content: "Designed documents with complex data logic and created extraction rule instructions." },
+                  { type: "level-two", content: "Supported integration team with KT sessions, testing, and debugging." }
+                ]  
               },
               {
                 position: "Digital Technology Intern",
                 dates: "May 2023 - December 2023",
-                description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"
+                description: [
+                  { type: "level-one", content: "Gained experience in architecture, application development, and technology operations as a key member of the Workforce Benefits technology team." },
+                  { type: "level-one", content: "Enhanced communication by creating a comprehensive library of 80 system icons and templates, streamlining architectural diagram creation." },
+                  { type: "level-one", content: "Led implementation of DocuSign Click by researching, creating, and presenting a proof of concept, enabling quick development of a static user interface." },
+                  { type: "level-one", content: "Generated JSON schemas using a schema generation tool, expediting API development and saving days of manual work." },
+                  { type: "level-one", content: "Developed interpersonal and networking skills through active engagement with the internship cohort and company events." },
+                  { type: "level-one", content: "Thrived in an agile environment, effectively handling frequent changes and challenges." },
+                ]
               }
             ]}
           />
@@ -119,7 +143,14 @@ const App = () => {
               {
                 position: "Cloud Engineering/Computer Science Intern",
                 dates: "May 2022 - March 2023",
-                description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deleniti labore excepturi magni porro tempore iure ipsa quidem perspiciatis aliquid laudantium eum id, facere vitae assumenda consequuntur quae! Minus, natus!"    
+                description: [
+                  { type: "level-one", content: "Self-taught MS Azure, Apache Kafka, LabVIEW, and other tools for designing and testing cloud architecture for low-latency computations." },
+                  { type: "level-one", content: "Set up C/C++ source code, Apache Kafka, and Azure Blob Storage on an Ubuntu VM." },
+                  { type: "level-one", content: "Developed a LabVIEW program to upload inputs to Azure Blob Storage and display computed results, also used for latency testing." },
+                  { type: "level-one", content: "Deployed MATLAB Production Server (MPS) on Azure using a custom ARM template, tested connection via Postman with RESTful API." },
+                  { type: "level-one", content: "Created presentations, demonstrations, and detailed documentation with block diagrams." },
+                  { type: "level-one", content: "Assisted with software tasks and maintained thorough system documentation." },
+                ]  
               }
             ]}
                       />

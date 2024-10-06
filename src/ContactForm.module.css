@@ -31,6 +31,7 @@
 button {
   padding: 10px 15px;
   width: 200px;
+  font-weight: bold;
   background-color: var(--primary-bg);
   color: var(--accent-text);
   border: none;
@@ -41,11 +42,18 @@ button {
 }
 
 button:disabled {
-  background-color: #ccc;
+  background-color: var(--primary-bg);
+  color: var(--accent-text);
+  opacity: 50%;
   cursor: not-allowed;
 }
 
 .responseMessage {
   margin-top: 15px;
+  font-weight: bold;
+}
+
+p.backendDown {
+  color: red;
   font-weight: bold;
 }

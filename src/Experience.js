@@ -40,11 +40,17 @@ const Experience = ({ company, positions }) => {
                   <p className={styles.dates}>{position.dates}</p>
                 </span>
               </div>
-              <div
-                className={styles.experienceDescription}
-                ref={el => descriptionRefs.current[index] = el}
-              >
-                <p className={styles.description}>{position.description}</p>
+              <div className={styles.experienceDescription} ref={el => descriptionRefs.current[index] = el}>
+                <ul className={styles.descriptionList}>
+                  {position.description.map((item, bulletIndex) => (
+                    <li
+                      key={bulletIndex}
+                      className={item.type === "level-one" ? styles.levelOneItem : styles.levelTwoItem}
+                    >
+                      {item.content}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>

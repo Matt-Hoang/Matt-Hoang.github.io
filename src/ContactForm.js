@@ -11,7 +11,6 @@ const ContactForm = () => {
     email: '',
     message: '',
   });
-
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [responseMessage, setResponseMessage] = useState('');
   const [captchaToken, setCaptchaToken] = useState('');
@@ -30,7 +29,7 @@ const ContactForm = () => {
   
     const recaptchaValue = window.grecaptcha.getResponse();
     if (!recaptchaValue) {
-      setResponseMessage('Please complete the reCAPTCHA.');
+      setResponseMessage('*Please complete the reCAPTCHA.');
       setIsSubmitting(false);
       return;
     }
@@ -56,11 +55,11 @@ const ContactForm = () => {
           .then(
             (response) => {
               console.log('SUCCESS!', response.status, response.text);
-              setResponseMessage('Your message has been sent!');
+              setResponseMessage('*Your message has been sent!');
             },
             (err) => {
               console.error('FAILED...', err);
-              setResponseMessage('There was an error sending your message.');
+              setResponseMessage('*There was an error sending your message.');
             }
           )
           .finally(() => {
@@ -74,13 +73,13 @@ const ContactForm = () => {
             window.grecaptcha.reset();
           });
       } else {
-        setResponseMessage('reCAPTCHA verification failed. Please try again.');
+        setResponseMessage('*reCAPTCHA verification failed. Please try again.');
         setIsSubmitting(false);
       }
     })
     .catch((error) => {
       console.error('Error verifying reCAPTCHA:', error);
-      setResponseMessage('There was an error verifying reCAPTCHA.');
+      setResponseMessage('*There was an error verifying reCAPTCHA.');
       setIsSubmitting(false);
     });
   };
@@ -88,6 +87,7 @@ const ContactForm = () => {
 
   return (
     <div className={styles.contactForm}>
+      <p className={styles.backendDown}>*This widget has been disabled since backend is not running.</p>
       <h2>Contact Me</h2>
       <form onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
@@ -129,7 +129,7 @@ const ContactForm = () => {
           sitekey={RECAPTCHA_SITE_KEY}
           onChange={setCaptchaToken}
         />
-        <button type="submit" disabled={isSubmitting}>
+        <button type="submit" disabled /* ={isSubmitting} */>   
           {isSubmitting ? 'Sending...' : 'Send Message'}
         </button>
       </form>
