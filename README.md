@@ -1,9 +1,8 @@
 # Runnig Locally
-1. in one console run `npm start` 
-2. in a new console, cd into backend folder then run `node ./index,js` to start the backend js express server
-
-
-
+1. Clone to local: `git clone https://github.com/Matt-Hoang/Personal-Website.git`
+2. Install dependencies: `npm install`
+3. Run React App: `npm start` 
+4. Run Backend: In a new console, cd into backend folder then run `node ./index,js` to start the backend js express server
 
 
 
