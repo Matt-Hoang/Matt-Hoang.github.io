@@ -1,6 +1,7 @@
 .projectContainer {
     display: flex;
     margin-bottom: 25px;
+    container: projects-container / inline-size;
 }
 
 .desktopImage {
@@ -68,7 +69,7 @@
 }
 
 /* Media query for desktop screens */
-@media (min-width: 768px) {
+@container projects-container (min-width: 549px) {
     .desktopImage {
         display: block; 
     }
@@ -79,12 +80,13 @@
 }
 
 /* Media query for mobile screens */
-@media (max-width: 768px) {
+@container projects-container (max-width: 550px) {
     .desktopImage {
         display: none; 
     }
 
     .mobileImage {
         display: block; 
+        width: 100%;
     }
 }

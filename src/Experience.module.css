@@ -1,5 +1,6 @@
 .experience {
   margin-bottom: 20px;
+  container: experience-container / inline-size;
 }
 
 .experience h5, .experience h3 {
@@ -86,6 +87,7 @@
   color: var(--primary-bg);
   margin: 0 0 0 20px;
   font-weight: 500;
+  text-wrap: nowrap;
 }
 
 .experienceDescription {
@@ -108,4 +110,18 @@
 .levelTwoItem {
   margin-left: 20px;
   list-style-type: circle;
+}
+
+@container experience-container (max-width: 800px) {
+  .experienceHeader {
+    flex-direction: column;
+  }  
+
+  .companyDetails {
+    margin-bottom: 10px;
+  }
+
+  .dates {
+    margin: 0;
+  }
 }
