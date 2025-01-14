@@ -1,0 +1,92 @@
+.projectContainer {
+    display: flex;
+    margin-bottom: 25px;
+    container: projects-container / inline-size;
+}
+
+.desktopImage {
+    width: 250px;
+    box-shadow: 5px 5px 15px -10px rgba(0,0,0,0.75);
+    outline: 1px solid rgba(0,0,0,0.5);
+    margin-top: 10px;
+}
+
+.mobileImage {
+    width: 250px;
+    box-shadow: 5px 5px 15px -10px rgba(0,0,0,0.75);
+    outline: 1px solid rgba(0,0,0,0.5);
+    margin-top: 10px;
+}
+.details {
+    margin-left: 25px;
+}
+
+.title {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.skills {
+    margin: 5px 0 0 0;
+}
+
+.linksContainer {
+    display: flex;
+    align-items: center;
+}
+
+.linksContainer p {
+    margin: 0;
+}
+
+.linkList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.linkItem {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.linkList a:link {
+    text-decoration: none;
+    color: var(--primary-bg);
+}
+
+.linkList a:visited {
+    text-decoration: none;
+    color: var(--primary-bg);
+}
+
+.linkList a:hover {
+    text-decoration: underline;
+}
+
+.linkList a:active {
+    text-decoration: underline;
+}
+
+/* Media query for desktop screens */
+@container projects-container (min-width: 549px) {
+    .desktopImage {
+        display: block; 
+    }
+
+    .mobileImage {
+        display: none; 
+    }
+}
+
+/* Media query for mobile screens */
+@container projects-container (max-width: 550px) {
+    .desktopImage {
+        display: none; 
+    }
+
+    .mobileImage {
+        display: block; 
+        width: 100%;
+    }
+}
