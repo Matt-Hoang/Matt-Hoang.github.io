@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { FaLinkedin, FaGithub, FaInstagram, FaEnvelope } from 'react-icons/fa'; // Import icons
 import './App.css';
+import SocialsComponent from './SocialsComponent';
 import Experience from './Experience';
 import Projects from './Projects';
 import TechnicalSkills from './technical-skills';
@@ -82,21 +82,7 @@ const App = () => {
           <img src={require('./images/headshot.JPG')} alt="headshot" className="headshot-img-mobile" />
           <p>Hey, I’m Matt Hoang! I graduated from California State University Long Beach (CSULB) with a bachelor’s degree in computer science. My primary focus is software development, where I’ve worked on building various web and desktop applications. I’m also actively expanding my skill set in areas that complement and enhance my software engineering expertise, such as cloud computing, DevOps, and automation.</p>
           <p>Outside of my professional pursuits, I cherish spending time with my family and my dog, Lulu. I’m passionate about staying active, whether it’s indoor bouldering, weightlifting, or exploring the great outdoors through hiking and backpacking.</p>
-          <div className="social-icons">
-            <a href="mailto:matthoang19@gmail.com" target="_blank" rel="noopener noreferrer">
-              <FaEnvelope className="icon" />
-            </a>
-            <a href="https://www.linkedin.com/in/matthewhhoang" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin className="icon" />
-            </a>
-            <a href="https://github.com/Matt-Hoang" target="_blank" rel="noopener noreferrer">
-              <FaGithub className="icon" />
-            </a>
-            <a href="https://www.instagram.com/matt_hoang/" target="_blank" rel="noopener noreferrer">
-              <FaInstagram className="icon" />
-            </a>
-
-          </div>
+          <SocialsComponent customMargin="50px 0px"/>
         </section>
         <section id="Experience" ref={sectionRefs.Experience} className="content-section">
           <h1>EXPERIENCE</h1>
@@ -177,7 +163,7 @@ const App = () => {
               image={require('./images/projects/Personal-Website.png')}
               description="Rebuilt my personal website to replace an older version, using the project as an opportunity to learn React. I was able to create a more dynamic and responsive experience, while refining the visual design to provide a more polished and user-friendly interface. This project served as both a practical learning experience and a way to showcase my growth in web development."
               links = {[
-                {text: "Figma", url: ""},
+                {text: "Figma", url: "https://www.figma.com/design/kOhxf6RtIk8GWTTwaHbpb3/Personal-Website?node-id=0-1&t=DOr0R1JcqDOzEJdJ-1"},
                 {text: "GitHub", url: "https://github.com/Matt-Hoang/Personal-Website"}
               ]}
             />
@@ -200,13 +186,12 @@ const App = () => {
             />
             <Projects
               title="Dungeon Master"
-              skills="Java - Design Patterns"
+              skills="Java | Design Patterns"
               image={require('./images/projects/Dungeon-Master.jpg')}
               description="Developed a console-based game in Java that allowed users to fight monsters on a 5x5 map, advance to the subsequent map, and shop for items. This was created by utilizing design patterns such as inheritance and polymorphism to structure methods and objects, with an interactive menu for user actions based on the situation."
               links = {[
                 {text: "GitHub", url: "https://github.com/Matt-Hoang/DungeonMaster"},
-                {text: "Replit", url: ""},
-                {text: "Youtube", url: ""}
+                {text: "Youtube", url: "https://www.youtube.com/watch?v=0LMOeyY6SZw"}
               ]}
             />
           </div>

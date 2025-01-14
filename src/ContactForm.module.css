@@ -1,8 +1,22 @@
-.contactForm {
+.contactContainer {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: flex-end;
+  gap: 25px;
+}
+
+.contactForm, .contactInfo {
+  min-width: 304px;
   max-width: 500px;
   padding: 20px;
   background-color: #f4f4f4;
   border-radius: 10px;
+  height: fit-content;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 30px;
 }
 
 .formGroup {
@@ -13,6 +27,7 @@
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+  font-size: 20px;
 }
 
 .formGroup input,
@@ -22,16 +37,18 @@
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-size: 20px;
 }
 
 .formGroup input::placeholder {
   color: #ccc
 }
 
-button {
+.contactForm button {
   padding: 10px 15px;
   width: 200px;
   font-weight: bold;
+  font-size: 20px;
   background-color: var(--primary-bg);
   color: var(--accent-text);
   border: none;
@@ -41,7 +58,7 @@ button {
   margin: 20px auto 0; /* Center horizontally and add margin at the top */
 }
 
-button:disabled {
+.contactForm button:disabled {
   background-color: var(--primary-bg);
   color: var(--accent-text);
   opacity: 50%;
@@ -56,4 +73,61 @@ button:disabled {
 p.backendDown {
   color: red;
   font-weight: bold;
+}
+
+.contactInfo p {
+  font-size: 22px;
+  margin: 10px 0;
+}
+
+.contactInfo button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-size: 22px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+ 
+.contactInfo button .hoverCopyIcon {
+  opacity: 0;
+  visibility: none;
+  position: absolute;
+  right: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.contactInfo button:hover .hoverCopyIcon {
+  opacity: 1;
+  visibility: visible;
+  position: absolute;
+  right: 0;
+}
+
+.contactInfo button svg {
+  margin-left: 10px;
+}
+
+.contactInfo .copyToolTip {
+  position: absolute;
+  bottom: 100%; /* Position the tooltip above the button */
+  left: 95%; /* Center the tooltip horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  background-color: var(--primary-text); /* Background color for the tooltip */
+  color: #fff; /* Text color */
+  padding: 5px 10px; /* Padding for the tooltip */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 16px;
+  white-space: nowrap; /* Prevent the tooltip from wrapping */
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Initially hidden */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth show/hide */
+}
+
+.contactInfo button:hover .copyToolTip {
+  opacity: 1; /* Show the tooltip */
+  visibility: visible; /* Make it visible */
 }
