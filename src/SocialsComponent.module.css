@@ -1,0 +1,36 @@
+.socialIcons {
+    display: flex;
+    gap: 25px;
+}
+
+.socialIcons a svg {
+    color: var(--secondary-bg);
+    font-size: 30px;
+}
+
+.socialIcons a {
+    background-color: var(--primary-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+
+.socialIcons a:hover {
+    background-color: var(--primary-bg);
+    transition: background-color 0.3s ease;
+}
+
+/* desktop view */
+@media (min-width: 700px) {
+
+}
+
+/* mobile view */
+@media (max-width: 700px) {
+    .socialIcons {
+        justify-content: space-evenly;
+    }
+}
