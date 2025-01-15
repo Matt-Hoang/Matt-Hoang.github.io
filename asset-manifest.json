@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/Personal-Website/static/css/main.aa79c714.css",
+    "main.js": "/Personal-Website/static/js/main.77062519.js",
+    "static/js/453.aac68abc.chunk.js": "/Personal-Website/static/js/453.aac68abc.chunk.js",
+    "static/media/headshot.JPG": "/Personal-Website/static/media/headshot.aac664c37eca8eb5a712.JPG",
+    "static/media/Census-Helper.png": "/Personal-Website/static/media/Census-Helper.7a387c6b7f02512cf5ca.png",
+    "static/media/canva-icon.png": "/Personal-Website/static/media/canva-icon.bb967ca292817f223fa3.png",
+    "static/media/Personal-Website.png": "/Personal-Website/static/media/Personal-Website.b8fb7c2712657c47f943.png",
+    "static/media/postgresql-icon.png": "/Personal-Website/static/media/postgresql-icon.feb2e00ce8ea923ac386.png",
+    "static/media/firebase-icon.png": "/Personal-Website/static/media/firebase-icon.3760741c1e30456d53ff.png",
+    "static/media/java-logo.png": "/Personal-Website/static/media/java-logo.8a986b032f2e64041d74.png",
+    "static/media/QuackQuackGo.jpeg": "/Personal-Website/static/media/QuackQuackGo.16a3edc1e0a4812c9336.jpeg",
+    "static/media/visual-studio-icon.png": "/Personal-Website/static/media/visual-studio-icon.7f9758528fa25212830f.png",
+    "static/media/angular-icon.png": "/Personal-Website/static/media/angular-icon.d014da15fcc1be921351.png",
+    "static/media/react-icon.png": "/Personal-Website/static/media/react-icon.53a128070d24f0c1f2e9.png",
+    "static/media/linux-icon.png": "/Personal-Website/static/media/linux-icon.a7e1546439289585f971.png",
+    "static/media/swagger-icon.png": "/Personal-Website/static/media/swagger-icon.9ffd53ea87e94bb78323.png",
+    "static/media/mulesoft-icon.png": "/Personal-Website/static/media/mulesoft-icon.ceffd41156c64be16c8c.png",
+    "static/media/azure-devops-icon.png": "/Personal-Website/static/media/azure-devops-icon.9a04a49a5f46399cdff0.png",
+    "static/media/lucidchart-icon.png": "/Personal-Website/static/media/lucidchart-icon.8bed5c9c0c15c6262b8b.png",
+    "static/media/postman-icon.png": "/Personal-Website/static/media/postman-icon.3d423d06833d44611397.png",
+    "static/media/python-logo.png": "/Personal-Website/static/media/python-logo.62919b74e0db2cfcc5e6.png",
+    "static/media/visual-studio-code-icon.png": "/Personal-Website/static/media/visual-studio-code-icon.c6e78dde517994a49dc8.png",
+    "static/media/cpp-logo.png": "/Personal-Website/static/media/cpp-logo.fe2e0c84b860046fe730.png",
+    "static/media/node-js-icon.png": "/Personal-Website/static/media/node-js-icon.9fea1c7da2bd42ab93bf.png",
+    "static/media/sql-icon.png": "/Personal-Website/static/media/sql-icon.fbe5ebc3783670d8d7fa.png",
+    "static/media/Dungeon-Master.jpg": "/Personal-Website/static/media/Dungeon-Master.0141cf0c7710a2b26e6d.jpg",
+    "static/media/css-logo.png": "/Personal-Website/static/media/css-logo.84b1d74fccffcf044b27.png",
+    "static/media/html-logo.png": "/Personal-Website/static/media/html-logo.5ec5a5ac81b38fda363a.png",
+    "static/media/paclife_logo.JPG": "/Personal-Website/static/media/paclife_logo.5761462244fd8cd06194.JPG",
+    "static/media/js-logo.png": "/Personal-Website/static/media/js-logo.266bd9fb2663dcc057b4.png",
+    "static/media/sara_logo.JPG": "/Personal-Website/static/media/sara_logo.7881e9d79a65e9f5143b.JPG",
+    "index.html": "/Personal-Website/index.html",
+    "main.aa79c714.css.map": "/Personal-Website/static/css/main.aa79c714.css.map",
+    "main.77062519.js.map": "/Personal-Website/static/js/main.77062519.js.map",
+    "453.aac68abc.chunk.js.map": "/Personal-Website/static/js/453.aac68abc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aa79c714.css",
+    "static/js/main.77062519.js"
+  ]
+}
