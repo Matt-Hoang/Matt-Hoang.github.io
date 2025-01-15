@@ -1,11 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './App.css';
 import SocialsComponent from './SocialsComponent';
+import DownloadResumeBtn from './DownloadResumeBtn';
 import Experience from './Experience';
 import Projects from './Projects';
 import TechnicalSkills from './technical-skills';
 import ContactForm from './ContactForm';
 
+import { ReactNotifications, Store } from 'react-notifications-component'
+import 'react-notifications-component/dist/theme.css'
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('About');
@@ -23,7 +26,7 @@ const App = () => {
     const options = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.6
+      threshold: 0.25
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -57,6 +60,7 @@ const App = () => {
 
   return (
     <div className="layout">
+      <ReactNotifications />
       <div className='mobile-nav-banner'>
         <h1>MATT HOANG</h1>
       </div>
@@ -82,7 +86,8 @@ const App = () => {
           <img src={require('./images/headshot.JPG')} alt="headshot" className="headshot-img-mobile" />
           <p>Hey, I’m Matt Hoang! I graduated from California State University Long Beach (CSULB) with a bachelor’s degree in computer science. My primary focus is software development, where I’ve worked on building various web and desktop applications. I’m also actively expanding my skill set in areas that complement and enhance my software engineering expertise, such as cloud computing, DevOps, and automation.</p>
           <p>Outside of my professional pursuits, I cherish spending time with my family and my dog, Lulu. I’m passionate about staying active, whether it’s indoor bouldering, weightlifting, or exploring the great outdoors through hiking and backpacking.</p>
-          <SocialsComponent customMargin="50px 0px"/>
+          <DownloadResumeBtn customMargin="50px 0 25px 0"/>
+          <SocialsComponent customMargin="25px 0 25px 0"/>
         </section>
         <section id="Experience" ref={sectionRefs.Experience} className="content-section">
           <h1>EXPERIENCE</h1>

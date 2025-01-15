@@ -3,11 +3,37 @@ import emailjs from 'emailjs-com';
 import ReCAPTCHA from 'react-google-recaptcha';
 import styles from './ContactForm.module.css';
 import SocialsComponent from './SocialsComponent';
+import DownloadResumeBtn from './DownloadResumeBtn';
 
+import { Store } from 'react-notifications-component'
+
+// import icons
 import { FaRegCopy } from "react-icons/fa";
 import { FaCopy } from "react-icons/fa6";
 
+let isMobile = window.innerWidth <= 700; // Initial check for screen size
 
+function showNotification(title, message, type = "danger") {
+  Store.addNotification({
+    title: title,
+    message: message,
+    type: type, // 'default', 'success', 'info', 'warning', 'danger'
+    insert: "top", // 'top' or 'bottom'
+    container: isMobile ? "top-left" : "top-right", // 'top-left', 'top-right', 'top-center', 'bottom-left', 'bottom-right', 'bottom-center'
+    animationIn: ["animate__animated", "animate__fadeIn"], // animate.css classes
+    animationOut: ["animate__animated", "animate__fadeOut"], // animate.css classes
+    dismiss: {
+      duration: 5000, // auto-dismiss after 5 seconds
+      onScreen: true,
+      showIcon: true,
+    },
+  });
+}
+
+// Update `isMobile` on window resize
+window.addEventListener("resize", () => {
+  isMobile = window.innerWidth <= 700;
+});
 
 const RECAPTCHA_SITE_KEY = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
 
@@ -18,7 +44,7 @@ const ContactForm = () => {
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [responseMessage, setResponseMessage] = useState('');
+  const [responseMessage] = useState('');
   const [captchaToken, setCaptchaToken] = useState('');
 
   const handleChange = (e) => {
@@ -35,7 +61,11 @@ const ContactForm = () => {
 
     const recaptchaValue = window.grecaptcha.getResponse();
     if (!recaptchaValue) {
-      setResponseMessage('*Please complete the reCAPTCHA.');
+      showNotification(
+        "Incomplete form!",
+        "Please complete the reCAPTCHA.",
+        "warning",
+      );
       setIsSubmitting(false);
       return;
     }
@@ -60,12 +90,19 @@ const ContactForm = () => {
           }, userID)
             .then(
               (response) => {
-                console.log('SUCCESS!', response.status, response.text);
-                setResponseMessage('*Your message has been sent!');
+                showNotification(
+                  "Success!",
+                  "Your message has been sent!",
+                  "success",
+                );
               },
               (err) => {
                 console.error('FAILED...', err);
-                setResponseMessage('*There was an error sending your message.');
+                showNotification(
+                  "FAILED!",
+                  "There was an error sending your message.",
+                  "danger",
+                );
               }
             )
             .finally(() => {
@@ -79,13 +116,21 @@ const ContactForm = () => {
               window.grecaptcha.reset();
             });
         } else {
-          setResponseMessage('*reCAPTCHA verification failed. Please try again.');
+          showNotification(
+            "Server Error!",
+            "reCAPTCHA verification failed.",
+            "danger",
+          );
           setIsSubmitting(false);
         }
       })
       .catch((error) => {
         console.error('Error verifying reCAPTCHA:', error);
-        setResponseMessage('*There was an error verifying reCAPTCHA.');
+        showNotification(
+          "FAILED!",
+          "There was an error verifying reCAPTCHA.",
+          "danger",
+        );
         setIsSubmitting(false);
       });
   };
@@ -108,7 +153,6 @@ const ContactForm = () => {
   return (
     <div className={styles.contactContainer}>
       <div className={styles.contactForm}>
-        <p className={styles.backendDown}>*This widget has been disabled since backend is not running.</p>
         <h2>Contact Me</h2>
         <form onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
@@ -150,7 +194,7 @@ const ContactForm = () => {
             sitekey={RECAPTCHA_SITE_KEY}
             onChange={setCaptchaToken}
           />
-          <button type="submit" disabled /* ={isSubmitting} */>
+          <button type="submit" disabled ={isSubmitting}>
             {isSubmitting ? 'Sending...' : 'Send Message'}
           </button>
         </form>
@@ -161,15 +205,16 @@ const ContactForm = () => {
         <p>Matt Hoang</p>
         <p>Garden Grove, CA</p>
         <button onClick={copyText} onMouseLeave={resetToolTip}>
-          <p id='emailAddress'>matthoang19@gmail.com</p>
+          <p id='emailAddress' className={styles.emailAddress}>matthoang19@gmail.com</p>
           <span id="copyToolTip" className={styles.copyToolTip}>Copy Email</span>
           <span className={styles.defaultCopyIcon}>
-            <FaRegCopy/>
+            <FaRegCopy className={styles.copyIcon}/>
           </span>
           <span className={styles.hoverCopyIcon}>
-            <FaCopy/>
+            <FaCopy className={styles.copyIcon}/>
           </span>
         </button>
+        <DownloadResumeBtn customMargin="20px auto"/>
         <SocialsComponent customMargin="25px 0 0 0" customSpacing="space-evenly"/>
       </div>
     </div>

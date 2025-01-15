@@ -14,6 +14,10 @@
   height: fit-content;
 }
 
+.contactForm {
+  margin-bottom: 50px;
+}
+
 h2 {
   margin-top: 0;
   font-size: 30px;
@@ -70,14 +74,17 @@ h2 {
   font-weight: bold;
 }
 
-p.backendDown {
-  color: red;
-  font-weight: bold;
-}
-
 .contactInfo p {
   font-size: 22px;
-  margin: 10px 0;
+  margin: 7px 0;
+}
+
+.contactInfo .emailAddress {
+  color: var(--primary-text);
+}
+
+.copyIcon {
+  color: var(--primary-bg);
 }
 
 .contactInfo button {
@@ -91,7 +98,6 @@ p.backendDown {
   cursor: pointer;
 }
 
- 
 .contactInfo button .hoverCopyIcon {
   opacity: 0;
   visibility: none;
@@ -116,18 +122,18 @@ p.backendDown {
   bottom: 100%; /* Position the tooltip above the button */
   left: 95%; /* Center the tooltip horizontally */
   transform: translateX(-50%); /* Adjust for centering */
-  background-color: var(--primary-text); /* Background color for the tooltip */
-  color: #fff; /* Text color */
-  padding: 5px 10px; /* Padding for the tooltip */
-  border-radius: 4px; /* Rounded corners */
+  background-color: var(--primary-text); 
+  color: #fff; 
+  padding: 5px 10px; 
+  border-radius: 4px; 
   font-size: 16px;
-  white-space: nowrap; /* Prevent the tooltip from wrapping */
-  opacity: 0; /* Initially hidden */
-  visibility: hidden; /* Initially hidden */
-  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth show/hide */
+  white-space: nowrap; 
+  opacity: 0; 
+  visibility: hidden; 
+  transition: opacity 0.3s ease, visibility 0.3s ease; 
 }
 
 .contactInfo button:hover .copyToolTip {
-  opacity: 1; /* Show the tooltip */
-  visibility: visible; /* Make it visible */
+  opacity: 1;
+  visibility: visible;
 }

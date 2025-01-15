@@ -1,0 +1,29 @@
+.downloadBtn {
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-bg);
+    color:  var(--accent-text);
+    font-size: 17px;
+    font-weight: bold;
+    padding: 15px 25px;
+    border: 1px solid var(--secondary-text);
+    border-radius: 7px;
+    width: fit-content;
+    text-decoration: none;
+}
+
+.downloadBtn:hover {
+    background-color: rgb(52, 152, 219, 0.85);
+}
+
+.downloadIcon {
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+/* mobile view */
+@media (max-width: 700px) {
+    .downloadBtn {
+        margin: 25px auto !important;
+    }
+}
