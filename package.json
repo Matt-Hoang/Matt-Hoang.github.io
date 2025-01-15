@@ -1,7 +1,7 @@
 {
   "name": "portfolio-website",
   "version": "0.1.0",
-  "homepage": "http://matt-hoang.github.io/Personal-Website",
+  "homepage": "https://matt-hoang.github.io/Personal-Website",
   "private": true,
   "dependencies": {
     "@fortawesome/free-regular-svg-icons": "^6.7.2",
