@@ -1,20 +1,70 @@
-# Running Locally
+# Portfolio Project
+Welcome to my portfolio project! This is a showcase of my work as a developer, featuring a React frontend and a Node.js backend. Follow the instructions below to set up and run the project locally.
 
-### Set up
-1. Clone to local: `git clone https://github.com/Matt-Hoang/Personal-Website.git`
-2. Set up .env file in root 
-3. Install dependencies: `npm install`
+___
 
-### Run for local development
-1. Run React App for development: `npm start` 
-2. Run Backend: In a new console, cd into backend folder then run `node ./index,js` to start the backend js express server
-3. Open http://localhost:3000 to view website
+## Running Locally
 
-### Run for local build 
-1. `npm run build`
-2. `npx serve -s build`
+### Setup Instructions
+1. **Clone the repository**  
+   Run the following command to clone the repository to your local machine:
+   ```
+   git clone https://github.com/Matt-Hoang/Personal-Website.git
+   ```
+   
+2. **Set up .env file**
+  Option 1: Copy the .env file from an existing local development environment.
+  Option 2: Create a new .env file in the root directory. Include all necessary variables and API keys. 
 
+3. **Install dependencies**
+    ```
+    Install dependencies
+    ```
+    
+### Run for Local Development
+1. **Start the frontend**
+    Run the following command to start the React app in development mode:
+    ```
+    npm start
+    ```
 
+2. **Start the backend**
+    In a new terminal, navigate to the backend folder:
+    ```
+    cd backend
+    ```
+    
+    Start the backend server by running:
+    ```
+    node ./index.js
+    ```
+
+3. **Access the application**
+    Open your browser and navigate to:
+    http://localhost:3000
+
+### Run for Local Build
+1. **Build the application**
+    Create an optimized production build by running:
+    ```
+    npm run build
+    ```
+    This will minify JavaScript and CSS files, optimize images, and output static files to the build directory.
+
+2. **Serve the build locally**
+    Use the following command to serve the static files locally:
+    ```
+    npx serve -s build
+    ```
+3. **Deploy to GitHub Pages**
+    To deploy the build to the gh-pages branch, run:
+    ```
+    npx gh-pages -d build
+    ```
+    Access the live application at: 
+    https://matt-hoang.github.io/Personal-Website/
+
+___
 
 ## Available Scripts
 
