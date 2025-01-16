@@ -1,5 +1,10 @@
 # Portfolio Project
-Welcome to my portfolio project! This is a showcase of my work as a developer, featuring a React frontend and a Node.js backend. Follow the instructions below to set up and run the project locally.
+Welcome to my portfolio project! This is a showcase of my work as a developer, featuring a React frontend. Follow the instructions below to set up and run the project.
+
+**Key Features**
+- **React Frontend**: A responsive and user-friendly interface built using React.
+- **Contact Form**: A functional contact form powered by EmailJS for seamless email communication.
+- **reCAPTCHA v2 Integration**: Added to the contact form for enhanced security and spam protection.
 
 ___
 
@@ -14,7 +19,9 @@ ___
    
 2. **Set up .env file**
   Option 1: Copy the .env file from an existing local development environment.
-  Option 2: Create a new .env file in the root directory. Include all necessary variables and API keys. 
+  Option 2: Create a new .env file in the root directory. Include all necessary variables and API keys below.
+    - EmailJS: Service ID, Template ID, Account Public Key
+    - reCAPTCHA: Site Key, Secret Key
 
 3. **Install dependencies**
     ```

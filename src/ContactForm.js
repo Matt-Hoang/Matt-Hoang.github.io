@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect, createRef } from 'react';
 import emailjs from 'emailjs-com';
 import ReCAPTCHA from 'react-google-recaptcha';
 import styles from './ContactForm.module.css';
@@ -35,104 +35,120 @@ window.addEventListener("resize", () => {
   isMobile = window.innerWidth <= 700;
 });
 
-const RECAPTCHA_SITE_KEY = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
-
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+  const [status, setStatus] = useState(null);
+  const [formValue, setFormValue] = useState({
+    user_name: "",
+    message: "",
+    user_email: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [responseMessage] = useState('');
-  const [captchaToken, setCaptchaToken] = useState('');
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
+  const refCaptcha = createRef();
+  const form = useRef();
+
+  useEffect(() => {
+    let timeout;
+
+    if (status === true || false) {
+      // Show the info message for 9 seconds
+      timeout = setTimeout(() => {
+        setStatus(null);
+      }, 10000);
+    }
+
+    return () => {
+      if (timeout) {
+        clearTimeout(timeout);
+        setStatus(null);
+      }
+    };
+  }, [status]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    const token = refCaptcha.current.getValue();
+    setStatus(true);
 
-    const recaptchaValue = window.grecaptcha.getResponse();
-    if (!recaptchaValue) {
-      showNotification(
-        "Incomplete form!",
-        "Please complete the reCAPTCHA.",
-        "warning",
-      );
-      setIsSubmitting(false);
-      return;
-    }
+    const params = {
+      ...formValue,
+      "g-recaptcha-response": token,
+    };
 
-    // Send the reCAPTCHA token to your backend for verification
-    fetch('http://localhost:5000/verify-recaptcha', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token: recaptchaValue }),
-    })
-      .then(response => response.json())
-      .then(data => {
-        if (data.message === 'reCAPTCHA verified successfully') {
-          // reCAPTCHA verification passed, send the email
-          const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-          const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-          const userID = process.env.REACT_APP_EMAILJS_USER_ID;
+    switch (true) {
+      case formValue.user_name === "":
+        showNotification(
+          "Name Required!",
+          "Name cannot be blank",
+          "warning",
+        );
+        setStatus(false);
+        break;
 
-          emailjs.send(serviceID, templateID, {
-            ...formData,
-            'g-recaptcha-response': recaptchaValue
-          }, userID)
-            .then(
-              (response) => {
+      case formValue.user_email === "":
+        showNotification(
+          "Email Required!",
+          "Email cannot be blank",
+          "warning",
+        );
+        setStatus(false);
+        break;
+
+      case formValue.message === "":
+          showNotification(
+            "Message Required!",
+            "Please include a message",
+            "warning",
+          );
+          setStatus(false);
+          break;
+
+      case token === undefined:
+        console.log("reCAPTCHA error");
+        showNotification(
+          "reCAPTCHA error!",
+          "There was an error sending your message.",
+          "danger",
+        );
+        setStatus(false);
+        break;
+
+      default:
+        emailjs
+          .sendForm( 
+            process.env.REACT_APP_EMAILJS_SERVICE_ID,
+            process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+            form.current,
+            process.env.REACT_APP_ACCOUNT_PUBLIC_KEY
+          )
+          .then(
+            (response) => {
+              if (response.status === 200) {
                 showNotification(
                   "Success!",
                   "Your message has been sent!",
                   "success",
                 );
-              },
-              (err) => {
-                console.error('FAILED...', err);
-                showNotification(
-                  "FAILED!",
-                  "There was an error sending your message.",
-                  "danger",
-                );
+                window.grecaptcha.reset();
+                setStatus(false);
+                setFormValue({
+                  user_name: "",
+                  message: "",
+                  user_email: ""
+                });
               }
-            )
-            .finally(() => {
-              setIsSubmitting(false);
-              setFormData({
-                name: '',
-                email: '',
-                message: '',
-              });
-              setCaptchaToken('');
-              window.grecaptcha.reset();
-            });
-        } else {
-          showNotification(
-            "Server Error!",
-            "reCAPTCHA verification failed.",
-            "danger",
+            },
+            (err) => {
+              showNotification(
+                "Missing reCAPTCHA!",
+                "Please verify reCAPTCHA",
+                "warning",
+              );
+              setStatus(false);
+              setFormValue({});
+              console.error(err)
+            }
           );
-          setIsSubmitting(false);
-        }
-      })
-      .catch((error) => {
-        console.error('Error verifying reCAPTCHA:', error);
-        showNotification(
-          "FAILED!",
-          "There was an error verifying reCAPTCHA.",
-          "danger",
-        );
-        setIsSubmitting(false);
-      });
+    }
   };
 
   function copyText() {
@@ -154,51 +170,51 @@ const ContactForm = () => {
     <div className={styles.contactContainer}>
       <div className={styles.contactForm}>
         <h2>Contact Me</h2>
-        <form onSubmit={handleSubmit}>
+        <form ref={form} onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
             <label htmlFor="name">Name:</label>
             <input
               type="text"
-              name="name"
-              id="name"
+              name="user_name"
               placeholder="John Doe"
-              value={formData.name}
-              onChange={handleChange}
-              required
+              value={formValue.user_name}
+              onChange={(e) =>
+                setFormValue({ ...formValue, user_name: e.target.value })
+              }
             />
           </div>
           <div className={styles.formGroup}>
             <label htmlFor="email">Email:</label>
             <input
               type="email"
-              name="email"
-              id="email"
+              name="user_email"
               placeholder="JohnDoe@email.com"
-              value={formData.email}
-              onChange={handleChange}
-              required
+              value={formValue.user_email}
+              onChange={(e) =>
+                setFormValue({ ...formValue, user_email: e.target.value })
+              }
             />
           </div>
           <div className={styles.formGroup}>
             <label htmlFor="message">Message:</label>
             <textarea
               name="message"
-              id="message"
               rows="5"
-              value={formData.message}
-              onChange={handleChange}
-              required
+              value={formValue.message}
+              onChange={(e) =>
+                setFormValue({ ...formValue, message: e.target.value })
+              }
             />
           </div>
           <ReCAPTCHA
-            sitekey={RECAPTCHA_SITE_KEY}
-            onChange={setCaptchaToken}
+            sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
+            ref={refCaptcha}
+            onChange={() => setStatus(null)}
           />
-          <button type="submit" disabled ={isSubmitting}>
-            {isSubmitting ? 'Sending...' : 'Send Message'}
+          <button type="submit">
+            Send Message
           </button>
         </form>
-        {responseMessage && <p className={styles.responseMessage}>{responseMessage}</p>}
       </div>
       <div className={styles.contactInfo}>
         <h2>Contact Info</h2>
